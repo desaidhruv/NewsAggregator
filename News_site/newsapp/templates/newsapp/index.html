@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>News Aggregator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css"> 
+    <style>
+        body{
+            /* background-color: #00008B; */
+            color: white;
+        }
+        .button{
+            border: .5px solid#0000FF;
+            color: #0000FF;
+        }
+        .button:hover{
+            background-color: #0000FF;
+            color: white;
+            transition: .7s;
+        }
+        .is-child{
+            border-radius: 15px;
+        }
+        .is-child:hover{
+            -webkit-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0,0.75);
+            -moz-box-shadow: -1px 9px 40px -12px rgba(0, 0, 0,0.75);
+            box-shadow: -1px 9px 40px -12px rgba(0, 0, 0,0.75);
+
+        }
+    </style>       
+</head>
+<body>
+    <div class="jumbotron">
+        
+        <center>
+            <h1 class="title " >News Aggregator</h1>
+           <a href="/" class="button  is-rounded">Refresh News</a>
+    </center>
+    </div><br>
+    <div class="container">
+        <div class="row">
+            <div class="tile is-ancestor">
+                <div class="tile  is-parent ">
+                  <div class="tile is-child box has-shadow">
+                    <p class="title">Inshorts Headlines</p>
+                    {% for n in inshorts_news %}
+                        <h5> -  {{n}} </h5>
+                        <hr>
+                    {% endfor %}
+                        <br>
+                    {% for n in inshorts_headlines %}
+                        <h5> -  {{n}} </h5>  
+                    
+                    {% endfor %}
+                  </div>
+                </div>
+                <div class="tile is-parent">
+                  <div class="tile is-child box">
+                    <p class="title">Times of India News</p>
+                    {% for htn in toi_news %}
+                    <h5> - {{htn}} </h5>
+                    <hr>
+                    {% endfor %}
+                    <br>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+</body>
+</html>
