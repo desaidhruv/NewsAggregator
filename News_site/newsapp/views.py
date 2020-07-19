@@ -3,7 +3,7 @@ from django.shortcuts import render
 import requests
 from bs4 import BeautifulSoup
 
-# GEtting news from Times of India
+# GEtting news from Inshorts
 
 inshorts_r = requests.get("https://inshorts.com/en/read/")
 inshorts_soup = BeautifulSoup(inshorts_r.content, 'html.parser')
